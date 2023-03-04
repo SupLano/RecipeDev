@@ -1,12 +1,13 @@
 import { useState, createContext} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Nav from './Nav';
 import HomeRecipes from './HomeRecipes';
 import Recipe from './Recipe';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+
+
+export const AppNavContext = createContext(null)
 
 function App() {
-
-  const IsNavActive = createContext(null)
 
   const [isNavActive, setNavActive] = useState(false)
 
@@ -16,10 +17,11 @@ function App() {
   }
 
   return (
-    <Router className={''}>
+    <AppNavContext.Provider value={{isNavActive,handleNavDrop}}>
+    <Router>
     <div className={"App w-full h-fit"}>
 
-      <Nav isNavActive={isNavActive} setIsNavActive={setNavActive} handleNavDrop={handleNavDrop}/>
+      <Nav/>
       <Switch className={''}>
         <Route exact path="/">
           <HomeRecipes isNavActive={isNavActive} />
@@ -52,6 +54,7 @@ function App() {
       </Switch>
     </div>
     </Router>
+    </AppNavContext.Provider>
   )
 }
 

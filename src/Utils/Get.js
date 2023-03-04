@@ -48,8 +48,7 @@ function Get({ url, type,}) {
                                                 console.log(reciept);                                                    
                                             }
                                         )
-                                        
-                                        
+                                                                                
                                       
                                 break;
     
@@ -70,10 +69,8 @@ function Get({ url, type,}) {
                                             }
                                         )
                                     
-
                                 break;
-                                default:
-                                // code block
+                                default:                               
                             }
                         
                             

@@ -9,9 +9,9 @@ function RecipeCard({title, id, summary, cheap, diets, image}) {
     
        <img src={image} alt={'recipe'} className={'object-cover w-full'}/> 
        <div className={''}>  
-         <Link to={`/Recipe/${id}`}>
-          <h5 className={'text-grey-700 py-3 px-3 text-l font-semibold'}>{title}</h5>
-          </Link>
+                <Link to={`/Recipe/${id}`}>
+                  <h5 className={'text-grey-700 py-3 px-3 text-l font-semibold'}>{title}</h5>
+                </Link>
        </div>
     </div>
     </div>

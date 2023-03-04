@@ -1,0 +1,9 @@
+ Array.isArray(Results) && Results.length > 1 && Results.map (result => {
+                      return (
+                              <Link key={result.id} to={`/Recipe/${result.id}`} className={'p-2 block'}> 
+                                    {
+                                        result.title
+                                    }
+                              </Link>
+                              )
+                                                                               }           )

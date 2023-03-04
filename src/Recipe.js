@@ -1,14 +1,12 @@
-import React, { useRef } from 'react'
-import { useState } from 'react';
-import { useEffect } from 'react'
+import {useState, useEffect, useContext } from 'react'
 import {useParams} from 'react-router-dom'
+import { AppNavContext } from './App';
 import Loading from './Utils/Loading';
 import RecipeCard from './Utils/RecipeCard';
 import Get from './Utils/Get';
 
-
-
 function Recipe(props) {  
+    const {isNavActive, handleNavDrop}= useContext(AppNavContext)
     const [idPage, setidPage] = useState(null);
     const { id } = useParams();
     const [pageDetails, setpageDetails] = useState({'url' : ``, 'type': ``})
@@ -49,23 +47,23 @@ function Recipe(props) {
                 setidPage(false);
                 switch(props.type) {
                     case "African":
-                      setpageDetails({'url' : `https://api.spoonacular.com/recipes/complexSearch?query=african&number=12&apiKey=${key}`, type : 'Page'})
+                      setpageDetails({'url' : `https://api.spoonacular.com/recipes/complexSearch?query=african&number=24&apiKey=${key}`, type : 'Page'})
                       break;
                       
                     case "American":
-                      setpageDetails({'url' : `https://api.spoonacular.com/recipes/complexSearch?query=american&number=12&apiKey=${key}`, type : 'Page'})
+                      setpageDetails({'url' : `https://api.spoonacular.com/recipes/complexSearch?query=american&number=24&apiKey=${key}`, type : 'Page'})
                       break;
   
                     case "Chinese":
-                      setpageDetails({'url' : `https://api.spoonacular.com/recipes/complexSearch?query=chinese&number=12&apiKey=${key}`, type : 'Page'})
+                      setpageDetails({'url' : `https://api.spoonacular.com/recipes/complexSearch?query=chinese&number=24&apiKey=${key}`, type : 'Page'})
                       break;
 
                     case "European":
-                      setpageDetails({'url' : `https://api.spoonacular.com/recipes/complexSearch?query=european&number=12&apiKey=${key}`, type : 'Page'})
+                      setpageDetails({'url' : `https://api.spoonacular.com/recipes/complexSearch?query=european&number=24&apiKey=${key}`, type : 'Page'})
                       break;
 
                     case "Spanish":
-                      setpageDetails({'url' : `https://api.spoonacular.com/recipes/complexSearch?query=spanish&number=12&apiKey=${key}`, type : 'Page'})
+                      setpageDetails({'url' : `https://api.spoonacular.com/recipes/complexSearch?query=spanish&number=24&apiKey=${key}`, type : 'Page'})
                       break;
 
                     default:
@@ -90,7 +88,7 @@ if (!idPage) {
   return (
     <div className={''}>
     
-        <div className={props.isNavActive ? ' h-full w-full grid pt-20 md:pt-36 lg:pt-20 lg:grid-cols-4 md:grid-cols-3 gap-10' : ' h-full w-full grid pt-72 md:pt-32 lg:pt-20 lg:grid-cols-4 md:grid-cols-3 gap-10'}>
+        <div className={isNavActive ? ' h-full w-full grid pt-20 md:pt-36 lg:pt-20 lg:grid-cols-4 md:grid-cols-3 gap-10' : ' h-full w-full grid pt-72 md:pt-32 lg:pt-20 lg:grid-cols-4 md:grid-cols-3 gap-10'}>
             {
                 loading  ? <Loading/> : Array.isArray(data) && data.map( rec => {
                     return (
@@ -113,8 +111,15 @@ else if (idPage) {
         { loading ? <Loading/> : 
          
            data.image ?  
-                <div className={props.isNavActive ? "pt-14 pb-80 lg:pt-20 md:pt-32 ml-0 mr-0 flex flex-col justify-center items-center relative h-full overflow-hidden" : ' pt-64 pb-80 mt-5 lg:pt-14 md:pt-28 ml-0 mr-0 h-full flex flex-col justify-center items-center bg-sky-40 relative overflow-hidden'}>                          
-                          <span className={'w-full font-na font-extrabold tracking-widest text-4xl opacity-80 text-center pl-2'}>{data.title}</span>                       
+                <div className={isNavActive ? "pt-14 pb-80 lg:pt-20 md:pt-32 md:mt-10 ml-0 mr-0 flex flex-col justify-center items-center relative h-full w-full overflow-hidden" : ' pt-64 pb-80 mt-5 lg:pt-14 md:pt-28 md:mt-10 ml-0 mr-0 h-full w-full flex flex-col justify-center items-center bg-sky-40 relative overflow-hidden'}>                          
+                          <div className='flex flex-wrap md:flex-nowrap gap-2 bg-blu-900 justify-center w-full h-full p-2'>
+                                <span className={'font-na bg-ky-900 font-extrabold tracking-widest text-5xl opacity-90 text-center pl-2 pt-2 pb-2'}>{data.title}</span>  
+                                <div className='p-2 self-center bg-ed-900 flex justify-center md:justify-end gap-2 items-center text-center w-1/2'>
+                                    <div className={'shadow border border-orange-400 rounded-lg text-sm font-bold pl-4 pr-2 pt-2 pb-3 bg-orange-600'}>Save</div>
+                                    <div className={'shadow border border-green-500 rounded-lg text-sm font-bold pl-4 pr-2 pt-2 pb-3 bg-green-600'}>Share</div>
+                                    <div className={'shadow border border-red-500 rounded-lg text-sm font-bold pl-4 pr-2 pt-2 pb-3 bg-red-600'}>Download</div>
+                                </div>
+                          </div>                     
                           <div className={'grid md:grid-cols-3 bg-red-20 p-5 gap-2 mt-10 w-full ml-9 mr-9 bg-gray-5'}>
                                     <div className={'flex justify-center h-fit items-start bg-blue-10 relative'}>
                                         <span className={'text-white text-lg font-bold uppercase font-nav bg-pink-600 rounded-full absolute p-2 top-4 left-0  '}>
@@ -137,7 +142,7 @@ else if (idPage) {
                                                     data.nutrition.ingredients ? 
                                                           data.nutrition.ingredients.map( ingredient => {
                                                             return (
-                                                              <span className={ 'pl-4 pr-4 pb-4 block uppercase'}>{ingredient.name}</span> 
+                                                              <span key={ingredient.name} className={ 'pl-4 pr-4 pb-4 block uppercase'}>{ingredient.name}</span> 
                                                             )
                                                           }
                                                           )
@@ -157,7 +162,7 @@ else if (idPage) {
                                                   data.analyzedInstructions[0].steps ?                                                       
                                                             data.analyzedInstructions[0].steps.map( ({step}) => {
                                                                   return (
-                                                                      <div className={'block font-thin odd:bg-gray-100 p-8 text-center'}>{step}</div>
+                                                                      <div key={step} className={'block font-thin odd:bg-gray-100 p-8 text-center'}>{step}</div>
                                                                         )
                                                               }
                                                                       )                          

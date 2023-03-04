@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { FaHamburger, FaEvernote, FaGuitar, FaGlobeEurope, FaGopuram, FaList } from "react-icons/fa"
 import Search from './Utils/Search'
-import { FaHamburger, FaEvernote, FaGuitar, FaGlobeEurope, FaGopuram, FaList } from "react-icons/fa";
+import {AppNavContext} from './App'
 
 
  
-function Nav({isNavActive, handleNavDrop}) {
-
+function Nav() {
+  const {isNavActive, handleNavDrop}= useContext(AppNavContext)
   return (
         <div className={'top-0 left-0 right-0 m-0 border-b dark:border-gray-600 shadow bg-gray-50 fixed w-full z-30 pb-1'}>
                 <div className={'md:hidden block'}>
