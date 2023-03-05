@@ -2,20 +2,11 @@ import { React, useContext } from "react";
 import { AppNavContext } from "./App";
 import RecipeCard from "./Utils/RecipeCard";
 import Loading from "./Utils/Loading";
-import Get from "./Utils/Get";
+import Fetcher from "./Utils/Fetcher";
 
 function HomeRecipes() {
   const { isNavActive } = useContext(AppNavContext);
-  const keys = [
-    "1882448aefc44b3ea30609cdccf40951",
-    "b996787c904f49ba9142544aa5832a3e",
-    "fa37f0fee335472a906bdc5a0cb4c3a8",
-  ];
-  let key = keys[Math.floor(Math.random() * 3)];
-  const { data, loading } = Get({
-    url: `https://api.spoonacular.com/recipes/random?number=24&apiKey=${key}`,
-    type: "Homepage",
-  });
+  const { data, loading } = Fetcher({type: 'Homepage'});
 
   return (
     <div
