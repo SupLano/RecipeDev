@@ -1,5 +1,5 @@
 import { useState, createContext } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, useLocation } from "react-router-dom";
 import Nav from "./Nav";
 import HomeRecipes from "./HomeRecipes";
 import Recipe from "./Recipe";
@@ -13,6 +13,7 @@ function App() {
     setNavActive(!isNavActive);
     console.log(isNavActive);
   };
+  
 
   return (
     <AppNavContext.Provider value={{ isNavActive, handleNavDrop }}>

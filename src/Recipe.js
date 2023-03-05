@@ -140,7 +140,7 @@ function Recipe(props) {
                 : " bg-sky-40 relative mt-5 ml-0 mr-0 flex h-full w-full flex-col items-center justify-center overflow-hidden pt-64 pb-80 md:mt-10 md:pt-28 lg:pt-14"
             }
           >
-            <div className="bg-blu-900 flex h-full w-full flex-wrap justify-center gap-2 p-2 md:flex-nowrap">
+            <div className="bg-lue-900 flex h-full w-full flex-wrap justify-around gap-2 p-2 md:flex-nowrap md:justify-between">
               <span
                 className={
                   "font-na bg-ky-900 pl-2 pt-2 pb-2 text-center text-5xl font-extrabold tracking-widest opacity-90"
@@ -148,28 +148,31 @@ function Recipe(props) {
               >
                 {data.title}
               </span>
-              <div className="bg-ed-900 flex w-1/2 items-center justify-center gap-2 self-center p-2 text-center md:justify-end">
+              <div className="bg-ed-900 flex w-1/2  items-center justify-center gap-2  p-2 text-center md:justify-end lg:justify-end">
                 <div
                   className={
-                    "rounded-lg border border-orange-400 bg-orange-600 pl-4 pr-2 pt-2 pb-3 text-sm font-bold shadow"
+                    "rounded border border-orange-500 bg-orange-600 pl-4 pr-3 pt-2 pb-3 text-sm font-bold shadow hover:bg-orange-300 hover:cursor-pointer"
                   }
                 >
                   Save
                 </div>
                 <div
                   className={
-                    "rounded-lg border border-green-500 bg-green-600 pl-4 pr-2 pt-2 pb-3 text-sm font-bold shadow"
+                    "rounded border border-green-500 bg-green-500 pl-4 pr-3 pt-2 pb-3 text-sm font-bold shadow hover:bg-green-300 hover:cursor-pointer"
                   }
                 >
                   Share
                 </div>
-                <div
-                  className={
-                    "rounded-lg border border-red-500 bg-red-600 pl-4 pr-2 pt-2 pb-3 text-sm font-bold shadow"
-                  }
-                >
-                  Download
-                </div>
+                <button class="inline-flex items-center rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 hover:bg-gray-400">
+                  <svg
+                    class="mr-2 h-4 w-4 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                  </svg>
+                  <span>Download</span>
+                </button>
               </div>
             </div>
             <div

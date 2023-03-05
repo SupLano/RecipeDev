@@ -66,7 +66,7 @@ function Search() {
   return (
     <div className={"relative p-2 md:block"}>
       <div className={"flex justify-center"}>
-        <div className={" xl:w-96"}>
+        <div className={" xl:w-72"}>
           <div className={"input-group relative flex w-full items-stretch"}>
             <input
               type="search"
@@ -106,7 +106,7 @@ function Search() {
       {In ? (
         <div
           className={
-            "max-w-lga absolute mt-6 min-w-full break-words rounded border bg-myblack p-2 text-center text-white opacity-80 md:-ml-3 lg:-ml-1"
+            "max-w-lg shadow-lg absolute mt-6 min-w-full break-words rounded border bg-myblack p-2 text-center text-white opacity-80 md:-ml-3 lg:-ml-1"
           }
         >
           {Results ? (
@@ -118,7 +118,7 @@ function Search() {
                       <Link
                         key={result.id}
                         to={`/Recipe/${result.id}`}
-                        className={"block p-2"}
+                        className={"block p-2 capitalize"}
                       >
                         {result.title}
                       </Link>
@@ -126,7 +126,7 @@ function Search() {
                   })}
                 </div>
               ) : (
-                <div>Result not found...</div>
+                <div>No Results Found...</div>
               )}
             </div>
           ) : null}

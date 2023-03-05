@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { FaHamburger, FaEvernote, FaGuitar, FaGlobeEurope, FaGopuram, FaList } from "react-icons/fa"
+import { FaHamburger, FaEvernote, FaGuitar, FaGlobeEurope, FaGopuram, FaList, FaHome} from "react-icons/fa"
 import Search from './Utils/Search'
 import {AppNavContext} from './App'
 
@@ -8,6 +8,8 @@ import {AppNavContext} from './App'
  
 function Nav() {
   const {isNavActive, handleNavDrop}= useContext(AppNavContext)
+  const path = window.location.pathname
+  console.log(path)
   return (
         <div className={'top-0 left-0 right-0 m-0 border-b dark:border-gray-600 shadow bg-gray-50 fixed w-full z-30 pb-1'}>
                 <div className={'md:hidden block'}>
@@ -16,6 +18,9 @@ function Nav() {
 
                 <div className={isNavActive ? 'hidden md:flex md:flex-col md:flex-wrap md:justify-center md:items-center lg:flex lg:flex-row lg:justify-around lg:align-top' : 'flex flex-col justify-between items-center flex-wrap lg:flex-row lg:justify-around lg:items-center'}> 
                         <div className={'flex flex-col md:flex-row justify-center items-center font-na font-extrabold'}> 
+
+                                    {  }
+
                                     <Link className={` flex justify-center uppercase text-2xl md:p-2  text-blue-800-900`} to="/african">
                                         <FaEvernote className={'pt-1'}/>
                                         <p className={'font-extrabold'}>African</p> 
