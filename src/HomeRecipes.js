@@ -12,8 +12,8 @@ function HomeRecipes() {
     <div
       className={
         isNavActive
-          ? " grid h-full w-full pt-14 md:grid-cols-3 md:gap-3 md:pt-32 lg:grid-cols-4 lg:pt-16"
-          : "grid h-full w-full pt-64 md:grid-cols-3 md:gap-3 md:pt-28 lg:grid-cols-4 lg:pt-16"
+          ? " grid h-full w-full pt-14 md:grid-cols-3 md:gap-3 md:pt-32 md:mt-3 lg:mt-0 xl:mt-0 lg:grid-cols-4 xl:grid-cols-5 lg:pt-36 xl:pt-20"
+          : "grid h-full w-full pt-72 md:grid-cols-3 md:gap-3 md:pt-36 lg:grid-cols-4 xl:grid-cols-5 lg:pt-34"
       }
     >
       {loading ? (

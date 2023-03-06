@@ -42,74 +42,51 @@ function Search() {
   const { data } = Fetcher(pageDetails)
 
   return (
-    <div className={"relative p-2 md:block"}>
-      <div className={"flex justify-center"}>
-        <div className={" xl:w-72"}>
-          <div className={"input-group relative flex w-full items-stretch"}>
-            <input
-              type="search"
-              onInput={handleInput}
-              onBlur={stopSearch}
-              placeholder="Search recipe"
-              className={
-                "form-control relative m-0 block w-full min-w-0 flex-auto rounded-l border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1 font-nav text-base text-gray-700 transition ease-in-out focus:border-gray-100 focus:bg-white focus:text-gray-700 focus:outline-none"
-              }
-            />
-            <button
-              className={
-                "btn flex items-center bg-gray-500 text-xs  font-medium uppercase text-white  transition duration-150 ease-in-out hover:bg-gray-900 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-100 active:shadow-lg"
-              }
-              type="button"
-              id="button-addon2"
-            >
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="search"
-                className={"w-4"}
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      {In ? (
-        <div
-          className={
-            "max-w-lg shadow-lg absolute mt-6 min-w-full break-words rounded border bg-myblack p-2 text-center text-white opacity-80 md:-ml-3 lg:-ml-1"
-          }
-        >
-          {data ? (
-            <div>
-              {Array.isArray(data) && data.length > 1 ? (
-                <div>
-                  {data.map((result) => {
-                    return (
-                      <Link
-                        key={result.id}
-                        to={`/Recipe/${result.id}`}
-                        className={"block p-2 capitalize"}
-                      >
-                        {result.title}
-                      </Link>
-                    );
-                  })}
+    <div className={"relative p-2  bg-blue-50 mb-1 mt-1"}>
+
+        <div>               
+            <div className={'relative w-80'}>
+                <div className={'absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'}>
+                    <svg aria-hidden="true" className={'w-5 h-4 text-gray-500 dark:text-gray-400'} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-              ) : (
-                <div>No Results Found...</div>
-              )}
+                <input onInput={handleInput} onBlur={stopSearch} type="search" className={'block w-full p-4 pl-10 text-sm text-gray-900 focus:outline-0 border rounded-md bg-gray-50 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-myblack'} placeholder='Find Recipe'></input>
+                <button type="submit" className={'text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700'}>Search</button>
             </div>
-          ) : null}
         </div>
-      ) : null}
+
+        
+
+
+        {In ? (
+          <div
+            className={
+              "max-w-lg shadow-lg absolute mt-6 min-w-full break-words rounded border bg-myblack p-2 text-center text-white opacity-80 md:-ml-3 lg:-ml-1"
+            }
+          >
+            {data ? (
+              <div>
+                {Array.isArray(data) && data.length > 1 ? (
+                  <div>
+                    {data.map((result) => {
+                      return (
+                        <Link
+                          key={result.id}
+                          to={`/Recipe/${result.id}`}
+                          className={"block p-2 capitalize"}
+                        >
+                          {result.title}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div>No Results Found...</div>
+                )}
+              </div>
+            ) : null}
+          </div>
+        ) : null}
+
     </div>
   );
 }

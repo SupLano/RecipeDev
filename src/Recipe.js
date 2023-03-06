@@ -44,8 +44,8 @@ function Recipe(props) {
         <div
           className={
             isNavActive
-              ? " grid h-full w-full gap-10 pt-20 md:grid-cols-3 md:pt-36 lg:grid-cols-4 lg:pt-20"
-              : " grid h-full w-full gap-10 pt-72 md:grid-cols-3 md:pt-32 lg:grid-cols-4 lg:pt-20"
+              ? " grid h-full w-full gap-10 pt-20 md:grid-cols-3 md:pt-40 lg:grid-cols-4 xl:grid-cols-5 lg:pt-40 xl:pt-20"
+              : " grid h-full w-full gap-10 pt-80 md:grid-cols-3 md:pt-40 lg:grid-cols-4 xl:grid-cols-5 xl:pt-20 lg:pt-40"
           }
         >
           {loading ? (
@@ -78,8 +78,8 @@ function Recipe(props) {
           <div
             className={
               isNavActive
-                ? "relative ml-0 mr-0 flex h-full w-full flex-col items-center justify-center overflow-hidden pt-14 pb-80 md:mt-10 md:pt-32 lg:pt-20"
-                : " bg-sky-40 relative mt-5 ml-0 mr-0 flex h-full w-full flex-col items-center justify-center overflow-hidden pt-64 pb-80 md:mt-10 md:pt-28 lg:pt-14"
+                ? "relative ml-0 mr-0 flex h-full w-full flex-col items-center justify-center overflow-hidden pt-14 pb-8 md:mt-10 md:pt-32 lg:pt-28"
+                : " bg-sky-40 relative mt-5 ml-0 mr-0 flex h-full w-full flex-col items-center justify-center overflow-hidden pt-80 pb-10  md:mt-10 md:pt-28 xl:pt-10"
             }
           >
             <div className="bg-lue-900 flex h-full w-full flex-wrap justify-around gap-2 p-2 md:flex-nowrap md:justify-between">
