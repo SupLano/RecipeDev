@@ -72,7 +72,7 @@ function Search() {
                         <Link
                           key={result.id}
                           to={`/Recipe/${result.id}`}
-                          className={"block p-2 capitalize"}
+                          className={"block p-2 capitalize hover:text-blue-200 hover:scale-x-110"}
                         >
                           {result.title}
                         </Link>

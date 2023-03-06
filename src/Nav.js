@@ -25,34 +25,34 @@ function Nav() {
 
                                     {showHome && 
                                     <div>
-                                        <Link className={`z-30 justify-center uppercase md:p-2  text-blue-800-900`} to="/">
-                                                                 <FaHome className='w-10 h-6 md:mr-10'></FaHome>
+                                        <Link className={`z-30 justify-center uppercase md:p-2  text-blue-800-900  `} to="/">
+                                                                 <FaHome className='w-10 h-6 md:mr-10 hover:bg-blue-700 transition ease-out delay-100'></FaHome>
                                          </Link>
                                     </div>  }
 
-                                    <Link className={` flex justify-center uppercase text-2xl pr-5 pl-5 md:p-2  text-blue-800-900`} to="/african">
+                                    <Link className={` flex justify-center uppercase text-2xl pr-5 pl-5 md:p-2  text-blue-800-900 hover:scale-110 hover:text-blue-400 transition ease-out delay-100`} to="/african">
                                         <FaEvernote className={'pt-2'}/>
                                         <p className={'font-extrabold'}>African</p> 
                                     </Link>
                                 
 
-                                    <Link className={`flex justify-center uppercase text-2xl pr-5 pl-5 md:p-3 md:pl-4   text-slate-000 `} to="/american">
+                                    <Link className={`flex justify-center uppercase text-2xl pr-5 pl-5 md:p-3 md:pl-4   text-slate-000  hover:scale-110 hover:text-blue-400 transition ease-out delay-100`} to="/american">
                                         <p>American</p>
                                         <FaHamburger className={' pt-2'}/>
                                     </Link>
                                     
 
-                                    <Link className={`flex justify-center uppercase text-2xl md:p-3 md:pl-4   text-slate-000 `} to="/chinese">
-                                        <FaGopuram className={'pt-2'}/>
+                                    <Link className={`flex justify-center uppercase text-2xl md:p-3 md:pl-4   text-slate-000 hover:scale-110 hover:text-blue-400 transition ease-out delay-100 `} to="/chinese">
+                                        <FaStop className={'pt-2'}/>
                                         <p>Chinese</p>                                        
                                     </Link>
 
-                                    <Link className={`flex justify-center uppercase text-2xl md:p-3 md:pl-4  text-slate-000`} to="/european">
+                                    <Link className={`flex justify-center uppercase text-2xl md:p-3 md:pl-4  text-slate-000 hover:scale-1 hover:text-blue-400 transition ease-out delay-100`} to="/european">
                                         <p>European</p>
                                         <FaGlobeEurope className={'pt-2'}/>
                                     </Link>
 
-                                    <Link className={`flex justify-center uppercase text-2xl md:p-3 md:pl-4   text-slate-000 `} to="/spanish">
+                                    <Link className={`flex justify-center uppercase text-2xl md:p-3 md:pl-4   text-slate-000 hover:scale-110 hover:text-blue-400 transition ease-out delay-100 `} to="/spanish">
                                         < FaGuitar className={'pt-2'}/>
                                         <p>Spanish</p>                                        
                                     </Link>

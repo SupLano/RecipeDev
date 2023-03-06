@@ -44,7 +44,7 @@ function Recipe(props) {
         <div
           className={
             isNavActive
-              ? " grid h-full w-full gap-10 pt-20 md:grid-cols-3 md:pt-40 lg:grid-cols-4 xl:grid-cols-5 lg:pt-40 xl:pt-20"
+              ? " grid h-full w-full gap-10 pt-14 md:grid-cols-3 md:pt-40 lg:grid-cols-4 xl:grid-cols-5 lg:pt-40 xl:pt-20"
               : " grid h-full w-full gap-10 pt-80 md:grid-cols-3 md:pt-40 lg:grid-cols-4 xl:grid-cols-5 xl:pt-20 lg:pt-40"
           }
         >
@@ -93,19 +93,19 @@ function Recipe(props) {
               <div className="bg-ed-900 flex w-1/2  items-center justify-center gap-2  p-2 text-center md:justify-end lg:justify-end">
                 <div
                   className={
-                    "rounded border border-orange-500 bg-orange-600 pl-4 pr-3 pt-2 pb-3 text-sm font-bold shadow hover:bg-orange-300 hover:cursor-pointer"
+                    "rounded border animate-pulse border-orange-500 bg-orange-600 pl-4 pr-3 pt-2 pb-3 text-sm font-bold shadow hover:bg-orange-300 hover:cursor-pointer"
                   }
                 >
                   Save
                 </div>
                 <div
                   className={
-                    "rounded border border-green-500 bg-green-500 pl-4 pr-3 pt-2 pb-3 text-sm font-bold shadow hover:bg-green-300 hover:cursor-pointer"
+                    "rounded border animate-bounce border-green-500 bg-green-500 pl-4 pr-3 pt-2 pb-3 text-sm font-bold shadow hover:bg-green-300 hover:cursor-pointer"
                   }
                 >
                   Share
                 </div>
-                <button class="inline-flex items-center rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 hover:bg-gray-400">
+                <button class=" animate-pulse inline-flex items-center rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 hover:bg-gray-400">
                   <svg
                     class="mr-2 h-4 w-4 fill-current"
                     xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +192,7 @@ function Recipe(props) {
                         <div
                           key={step}
                           className={
-                            "block p-8 text-center font-thin odd:bg-gray-100"
+                            "block p-8 text-center font-norma odd:bg-gray-100"
                           }
                         >
                           {step}
@@ -207,7 +207,7 @@ function Recipe(props) {
             </div>
             <div
               className={
-                "relative mt-5 h-fit rounded border-t bg-gray-50 p-7 pt-20 font-serif shadow lg:mt-32 lg:w-2/3"
+                "relative mt-5 h-fit rounded border-t bg-gray-100 p-7 pt-20 font-serif shadow lg:mt-32 lg:w-2/3 hover:cursor-pointer hover:bg-gray-50"
               }
             >
               <span
